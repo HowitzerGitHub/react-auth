@@ -212,7 +212,7 @@ export const resetPassword = async (req, res) => {
   try {
     const user = await userModel.findOne({ email });
     if (!user) return res.json({ success: false, message: "User not found" });
-    if (user.resetOtp == "" || user.resetOtpExpiredAt !== otp)
+    if (user.resetOtp == "" || user.resetOtp !== otp)
       return res.json({ success: false, message: "Invalid otp" });
     if (user.resetOtpExpiredAt < Date.now())
       return res.json({ success: false, message: "Otp expired" });
