@@ -12,9 +12,9 @@ const port = process.env.port || 4000;
 
 connectDB();
 
-app.use(express.json());
-
 app.use(cookieParser());
+
+app.use(express.json());
 
 app.use(cors({ credentials: true }));
 

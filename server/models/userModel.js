@@ -14,17 +14,17 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    default: "",
-  },
   verifyOtpExpiredAt: {
     type: Number,
     default: 0,
   },
-  isVerified: {
+  isAccountVerified: {
     type: Boolean,
     default: false,
+  },
+  verifyOtp: {
+    type: String,
+    default: "",
   },
   resetOtp: {
     type: String,
